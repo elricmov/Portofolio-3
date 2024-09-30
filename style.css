@@ -1,0 +1,298 @@
+:root{
+    --purple:#2F192E;
+    --purple-light:#30192d;
+    --dark-bleu:#012677;
+    --bleu:#5c65c0;
+    --skybleu:#00b4fc;
+    --light-bleu:#005bc5;
+    --dark-pink:#f64c57;
+    --dark-magenta:#e21b5a;
+    --light-green:#61e2c2;
+    --light-purple:#d9abff;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: poppins,sans-serif;
+}
+
+body{
+    background:linear-gradient(45deg, var(--purple),var(--purple-light));
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+}
+.profile-card{
+    background: #111;
+    width: 400px;
+    padding: 3rem;
+    border-radius: 10px;
+    min-height: 400px;
+    position: relative;
+    color: white;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-card .profile-pic{
+    margin-top: 15px;
+    overflow: hidden;
+    border-style: none;
+
+}
+.profile-card .profile-pic img{
+    border-radius: 10px;
+}
+.profile-card .profile-pic img:hover{
+  transform: translateZ(10px) rotateX(25deg) rotateY(25deg);
+}
+
+.profile-card .profile-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.profile-details .intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profile-details .intro h2{
+    margin-bottom: 20px;
+}
+
+.profile-details .intro h4{
+    background: #1d1d1d;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 8px;
+}
+.profile-details .intro .social{
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.profile-details .intro .social i{
+    color: #1d1d1d;
+    font-size: 16px;
+    color: white;
+    margin: 5px;
+    height: 33px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.profile-details .intro .social i:hover{
+    transform: scale(1.2);
+    border: 1px solid rgba(255, 255,255, 0.3);
+}
+
+.profile-card .contact-info{
+    background-color: #1d1d1d;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.profile-details .contact-info .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255,255, 0.3);
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.contact-info .row .icon{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    background-color: #111;
+    text-align: center;
+    color: white;
+    transition: 0.5s;
+}
+
+.row .icon:hover{
+    transform: scale(1.2);
+    border: 1px solid rgba(255, 255,255, 0.3);
+}
+
+.contact-info .row .content{
+    min-height: 70%;
+}
+
+.contact-info .row .content span{
+    font-size: 12px;
+}
+
+.download-btn{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+  }
+  .svgIcon {
+    fill: rgb(214, 178, 255);
+  }
+  
+  .icon2 {
+    width: 18px;
+    height: 5px;
+    border-bottom: 2px solid rgb(182, 143, 255);
+    border-left: 2px solid rgb(182, 143, 255);
+    border-right: 2px solid rgb(182, 143, 255);
+  }
+  
+  .tooltip {
+    position: absolute;
+    right: -105px;
+    opacity: 0;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .2s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+  
+  .tooltip::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: rgb(12, 12, 12);
+    background-size: 1000%;
+    background-position: center;
+    transform: rotate(45deg);
+    left: -5%;
+    transition-duration: .3s;
+  }
+
+  .download-btn .tooltip{
+    opacity: 1;
+    transition-duration: .3s;
+  }
+  .download-btn:hover{
+    background-color: rgb(150, 94, 225);
+    transition-duration:.3s ;
+  }
+
+  .download-btn:hover .icon2{
+    border-bottom: 2px solid rgb(235, 235, 235);
+    border-left: 2px solid rgb(235, 235, 235);
+    border-right: 2px solid rgb(235, 235, 235);
+  }
+  .download-btn:hover .svgIcon{
+    fill: rgb(255, 255, 255);
+    animation: slide-in-top 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+
+
+
+  .about{
+    background-color: black;
+    max-width: 800px;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+  }
+  
+  .about h1{
+    color: #f2f2f2;
+    margin-bottom: 1.1rem;
+    position: relative;
+    display: inline-block;
+    font-size: 3.3rem;
+    font-weight: 900;
+    
+  }
+
+.about h1::after{
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: -50%;
+  width: 45%;
+  height: 3px;
+  background: linear-gradient(45deg,#f64c57,#e21b5a);
+}
+  .about p{
+    color: #f2f2f2;
+    font-size: 23px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 1.5rem 0;
+  }
+  .about h2{
+    color: #f2f2f2;
+    margin-bottom: 1.1rem;
+    position: relative;
+    display: inline-block;
+    font-size: 3.3rem;
+    font-weight: 900;
+  }
+
+  .about h2::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -50%;
+    width: 45%;
+    height: 3px;
+    background: linear-gradient(45deg,#f64c57,#e21b5a);
+  }
+
+
+
+  .work .workbox .desc h3{
+    color:rgb(150, 94, 225);
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    text-decoration: underline;
+  }
